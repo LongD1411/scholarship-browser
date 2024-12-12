@@ -1,0 +1,404 @@
+
+/* header */
+.SearchRowColBlock{
+    display: flex;
+    justify-content: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.MainMenuSections{
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style-type: none;
+}
+
+.SectionNavigationItem{
+    padding: 20px;
+    color: #247BA0;
+}
+
+.SectionNavigationItem a{
+    text-decoration: none;
+}
+
+#HeaderSearch{
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.InputWrapper{
+    padding: 5px;
+}
+
+.SearchButton{
+    padding: 7px 12px;
+    background-color: #f95c39;
+    border: none;
+    border-radius: 0 6px;
+}
+
+.SearchButton i{
+    color: #edf1ff;
+}
+
+.AccountModule{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.AccountModule a{
+    text-decoration: none;
+    color: #247BA0;
+}
+
+.AccountModule > *{
+    margin: 8px;
+}
+#LoggedInToggle{
+    border: none;
+    background-color: white;
+    color: #247BA0;
+}
+
+/* Body */
+/* EssentialInformationWrapper */
+
+.EssentialInformationWrapper{
+    margin: 50px 0;
+    
+}
+
+.LayoutHero{
+    background-color: #3f5c6e;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.GridInContainer{
+    display: flex;
+    justify-content: space-around;
+    width: 80%;
+}
+
+.InfoActionWrapper{
+    align-content: flex-start;
+    align-items: flex-start;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin: 0 0 1rem;
+}
+
+.js-cypressScholarshipsTag{
+    align-items: center;
+    background-color: #edf3f6;
+    border: 0 solid #05293c;
+    border-radius: 1rem;
+    color: #05293c;
+    display: inline-flex;
+    font-size: .75rem;
+    font-weight: 400;
+    height: 2rem;
+    line-height: 1rem;
+    padding: 0 .75rem;
+}
+
+.js-cypressMeritTag{
+    align-items: center;
+    background-color: #edf3f6;
+    border: 0 solid #05293c;
+    border-radius: 1rem;
+    color: #05293c;
+    display: inline-flex;
+    font-size: .75rem;
+    font-weight: 400;
+    height: 2rem;
+    line-height: 1rem;
+    padding: 0 .75rem;
+}
+
+.ProviderName{
+    color: #fff;
+    font-size: 1.25rem;
+    font-weight: 400;
+    line-height: 2rem;
+    margin: 0 0 1rem;
+    text-decoration: none;
+}
+
+.ScholarshipName{
+    color: #fff;
+    font-size: 2.25rem;
+    font-weight: 700;
+    line-height: 3rem;
+    overflow: hidden;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    display: -webkit-box;
+    width: 700px;
+}
+
+.js-CTAButton{
+    align-items: center;
+    background-color: #f95c39;
+    border: 2px solid #f95c39;
+    border-radius: 3px;
+    box-sizing: border-box;
+    color: #fff;
+    cursor: pointer;
+    display: inline-flex;
+    font-size: 1rem;
+    font-weight: 700;
+    height: auto;
+    justify-content: center;
+    line-height: 1.5rem;
+    min-height: 3rem;
+    outline: none;
+    padding: .5rem 1.5rem;
+    text-align: center;
+    text-decoration: none;
+    transition: all .15s linear
+}
+
+.ConversionLinksWrapper{
+    margin: 30px 0;
+
+}
+
+.js-cypressConversionLinks{
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 6px;
+}
+
+.DesktopOnlyBlock{
+    margin: 20px 0;
+}
+
+.js-ScholarshipFlag{
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 20px;
+}
+
+/* Module_QuickFacts */
+
+.Module_QuickFacts{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.QuickFacts{
+    border-radius: .5rem;
+    padding: 1rem 1.5rem;
+    background-color: #fff;
+}
+
+.QuickFact{
+    display: flex;
+    align-items: center;
+    padding: 8px 30px;
+    border-bottom: 1px solid #edf3f6; 
+}
+
+.QuickFact:nth-child(4){
+    border: none;
+}
+
+.QuickFact .Icon i{
+    font-size: 22px;
+}
+
+.LabelContainer{
+    margin-left: 8px;
+}
+
+.LabelContainer .Title{
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 24px;
+    color: #05293C;
+}
+
+.LabelContainer .Lable{
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 16px;
+    color: #547A92;
+}
+
+/* mdc-layout-grid */
+.mdc-layout-grid{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0;
+}
+
+.AboutSection{
+    box-shadow: none;
+    font-size: 1.25rem;
+    font-weight: 400;
+    grid-column-end: span 8;
+    grid-row: unset;
+    line-height: 2rem;
+    padding: 0 1rem 1rem 0;
+    width: 700px;
+}
+
+.SectionTitle{
+    font-size: 1.5rem;
+    font-weight: 700;
+    line-height: 2rem; 
+}
+
+
+.AboutSection p{
+    font-size: 20px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    color: #05293C;
+}
+
+.Module_Card{
+    grid-column-end: span 4;
+    padding: 2rem 1rem 1rem;
+    padding-right: 1.5rem;
+    box-shadow: 6px 6px 8px rgba(0, 0, 0, 0.1);
+}
+
+.NameLocation .TextLink-Title{
+    text-decoration: none;
+    color: #05293C;
+    font-size: 20px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.LocationItems .TextLink{
+    text-decoration: none;
+    color: #05293C;
+    font-size: 12px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.Ranking a{
+    text-decoration: none;
+}
+
+.RankingDeatails{
+    display: flex;
+    align-items: center;
+}
+
+.RankingIcon{
+    color: #247ba0;
+    font-size: 1.5rem;
+    font-weight: 700;
+    line-height: 2rem;
+    margin: 0 .5rem 0 0;
+}
+
+.ValueAndLocation{
+    display: flex;
+    flex-direction: column;
+}
+
+.ValueAndLocation .Value{
+    color: #05293c;
+    font-size: 1rem;
+    font-weight: 700;
+    line-height: 1.5rem;
+}
+
+.ValueAndLocation .Location{
+    color: #3f5c6e;
+    font-size: .75rem;
+    font-weight: 400;
+    line-height: 1rem;
+}
+
+.RankingName{
+    color: #05293c;
+    display: block;
+    font-size: .75rem;
+    font-weight: 400;
+    line-height: 1rem;
+    margin-top: 12px;
+}
+
+.AdditionalInformation{
+    display: flex;
+    margin: 12px 0;
+}
+
+.Reviews{
+    display: flex;
+    flex-direction: column;
+    margin-left: 6px;
+}
+
+.Rating-IsRanked .Value{
+    color: #05293c;
+    font-size: 1.25rem;
+    font-weight: 400;
+    line-height: 2rem;
+}
+
+.ReadMore-ReadReviews{
+    color: #1e8558;
+    font-size: 12px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.OrganisationReadMore{
+    border-top: 0;
+    font-size: 12px;
+    margin: 12px 0;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.OrganisationReadMore a{
+    color: #1e8558;
+    display: block;
+    padding: .5rem 0;
+    word-wrap: break-word;
+    text-decoration: none;
+}
+
+/* Footer */
+.Footer{
+    background-color: #edf1ff;
+}
+
+.FooterBranding{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.FooterDisclaimer{
+    list-style-type: none;
+    display: flex;
+}
+
+.FooterDisclaimer li:nth-child(2){
+    padding: 0 30px;
+}
+
+.FooterDisclaimer li a{
+    text-decoration: none;
+    color: #05293C;
+}
+
+.FooterCopyright{
+    display: flex;
+    justify-content: center;
+    padding-bottom: 20px;
+    color: #05293C;
+}
+

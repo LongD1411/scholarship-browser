@@ -1,0 +1,117 @@
+<div class="Main">
+        <div class="LayoutHero">
+            <div class="GridInContainer">
+                <div class="EssentialInformationWrapper">
+                    <div class="InfoActionWrapper">
+                        <div class="js-cypressScholarshipsTag">Scholarships</div>
+                        <div class="js-cypressMeritTag">Merit-based</div>
+                    </div>
+                    <a class="ProviderName" href="">{{scholarship?.schoolName}}</a>
+                    <h1 class="ScholarshipName">{{scholarship?.name}}</h1>
+                    <a class="js-CTAButton" [href]="scholarship?.url">View page original</a>
+                    <div class="ConversionLinksWrapper">
+                        <span class="js-cypressConversionLinks">Find related programmes</span>
+                    </div>
+                </div>
+                <div class="Module_QuickFacts">
+                    <section class="QuickFacts">
+                        <div class="QuickFact">
+                            <div class="Icon">
+                                <i class="fa-solid fa-table-cells-large"></i>
+                            </div>
+                            <div class="LabelContainer">
+                                <div class="Title">{{scholarship?.fieldOfStudyName}}</div>
+                                <div class="Lable">Disciplines</div>
+                            </div>
+                        </div>
+                        <div class="QuickFact">
+                            <div class="Icon">
+                                <i class="fa-solid fa-dollar-sign"></i>
+                            </div>
+                            <div class="LabelContainer">
+                                <div class="Title">{{scholarship?.grantAmount}}</div>
+                                <div class="Lable">Grant</div>
+                            </div>
+                        </div>
+                        <div class="QuickFact">
+                            <div class="Icon">
+                                <i class="fa-solid fa-earth-americas"></i>
+                            </div>
+                            <div class="LabelContainer">
+                                <div class="Title">{{scholarship?.countryName}}</div>
+                                <div class="Lable">Location</div>
+                            </div>
+                        </div>
+                        <div class="QuickFact">
+                            <div class="Icon">
+                                <i class="fa-regular fa-calendar-days"></i>
+                            </div>
+                            <div class="LabelContainer">
+                                <div class="Title">{{scholarship?.endDate}}</div>
+                                <div class="Lable">Application deadline</div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+        <div class="mdc-layout-grid">
+            <div class="AboutSection">
+                <h2 class="SectionTitle">About</h2>
+                <p>{{scholarship?.description}}</p>
+            </div>
+            <div class="Module_Card">
+                <header class="Organisation">
+                    <div class="NameLocation">
+                        <a class="TextLink-Title">
+                            {{scholarship?.schoolName}}
+                        </a>
+                        <div class="js-locationInformationWrapper">
+                            <span class="LocationItems">
+                                <a href="" class="TextLink Connector">
+                                    {{scholarship?.countryName}}
+                                </a>
+                            </span>
+                        </div>
+                    </div> 
+                </header>
+                <div class="AdditionalInformation">
+                    <div class="Ranking">
+                        <a  class="js-workdRankingReadMoreButton">
+                            <div class="RankingDeatails">
+                                <span class="RankingIcon">
+                                    <i class="fa-solid fa-house"></i>
+                                </span>
+                                <div class="ValueAndLocation">
+                                    <span *ngIf="scholarship?.schoolRank" class="Value">Ranking {{scholarship?.schoolRank}}</span>
+                                    <span *ngIf="scholarship?.schoolRank == null" class="Value">Unrank</span>
+                                    <span class="Location">World</span>
+                                </div>
+                            </div>
+                            <span class="RankingName">Studyportals University Meta Ranking</span>
+                        </a>
+                    </div>
+                    <div class="Reviews">
+                        <span class="Rating-IsRanked">
+                            <span class="Value">5.0</span>
+                            <span class="Stars">
+                                <span class="Star Lnr-star-full"><i class="fa-solid fa-star"></i></span>
+                                <span class="Star Lnr-star-full"><i class="fa-solid fa-star"></i></span>
+                                <span class="Star Lnr-star-full"><i class="fa-solid fa-star"></i></span>
+                                <span class="Star Lnr-star-full"><i class="fa-solid fa-star"></i></span>
+                                <span class="Star Lnr-star-full"><i class="fa-solid fa-star"></i></span>
+                            </span>
+                        </span>
+                        <span class="ReadMore-ReadReviews">Read 56 reviews</span>
+                    </div>
+                </div>
+                <div class="OrganisationReadMore">
+                    Featured by
+                    <a href="" class="FeaturedBy">
+                        {{scholarship?.schoolName}}
+                    </a>
+                </div>
+            </div>
+        </div>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    </div>

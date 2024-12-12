@@ -1,0 +1,162 @@
+<main>
+    <div class="relative">
+        <img alt="University of Surrey campus" class="w-full h-96 object-cover "
+            src="https://storage.googleapis.com/a1aa/image/2ilZg5D5LT7QH9fzpaIKoucx6eYJGoqW8PGQkierpL0fpLYPB.jpg"
+            rel="stylesheet" width="1920" />
+    </div>
+    <div class="container mx-auto py-6 px-6">
+        <div class="text-sm text-gray-500 mb-4">
+            <a class="hover:underline" href="#">
+                Home
+            </a>
+            &gt;
+            <a class="hover:underline" href="/truong-hoc">
+                Universities
+            </a>
+            &gt;
+            <span>
+                {{school?.name}}
+            </span>
+        </div>
+        <div class="flex">
+            <div class="w-3/4">
+                <div class="flex items-center mb-4">
+                    <img alt="University of Surrey logo" class="mr-4" height="50" [src]="school?.logo" width="50" />
+                    <div>
+                        <div class="flex items-center">
+                            <span class="text-2xl font-bold">
+                                4.4
+                            </span>
+                            <div class="flex ml-2 text-yellow-500">
+                                <i class="fas fa-star">
+                                </i>
+                                <i class="fas fa-star">
+                                </i>
+                                <i class="fas fa-star">
+                                </i>
+                                <i class="fas fa-star">
+                                </i>
+                                <i class="fas fa-star-half-alt">
+                                </i>
+                            </div>
+                            <span class="text-sm text-gray-500 ml-2">
+                                (65 ratings)
+                            </span>
+                        </div>
+                        <a class="text-sm text-blue-600 hover:underline" href="#">
+                            Read 61 reviews
+                        </a>
+                    </div>
+                </div>
+                <p class="text-gray-700 mb-4">
+                    {{school?.description}}
+                </p>
+                <div class="border-t border-b py-4 mb-4">
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center text-gray-700">
+                        <div>
+                            <i class="fas fa-chart-line text-2xl mb-2">
+                            </i>
+                            <div class="font-bold">
+                                #{{school?.rankValue}}
+                            </div>
+                            <div>
+                                Ranking
+                            </div>
+                        </div>
+                        <div>
+                            <i class="fas fa-book text-2xl mb-2">
+                            </i>
+                            <div class="font-bold">
+                                115
+                            </div>
+                            <div>
+                                Masters
+                            </div>
+                        </div>
+                        <div>
+                            <i class="fas fa-graduation-cap text-2xl mb-2">
+                            </i>
+                            <div class="font-bold">
+                                {{school?.scholarships?.length}}
+                            </div>
+                            <div>
+                                Scholarships
+                            </div>
+                        </div>
+                        <div>
+                            <i class="fas fa-chalkboard-teacher text-2xl mb-2">
+                            </i>
+                            <div class="font-bold">
+                                909
+                            </div>
+                            <div>
+                                Academic Staff
+                            </div>
+                        </div>
+                        <div>
+                            <i class="fas fa-user-graduate text-2xl mb-2">
+                            </i>
+                            <div class="font-bold">
+                                14,746
+                            </div>
+                            <div>
+                                Students
+                            </div>
+                        </div>
+                        <div>
+                            <i class="fas fa-globe text-2xl mb-2">
+                            </i>
+                            <div class="font-bold">
+                                6,075
+                            </div>
+                            <div>
+                                Students (Int'l)
+                            </div>
+                        </div>
+                        <div>
+                            <i class="fas fa-female text-2xl mb-2">
+                            </i>
+                            <div class="font-bold">
+                                7,806
+                            </div>
+                            <div>
+                                Students (female)
+                            </div>
+                        </div>
+                        <div>
+                            <i class="fas fa-university text-2xl mb-2">
+                            </i>
+                            <div class="font-bold">
+                                Public
+                            </div>
+                            <div>
+                                Institution Type
+                            </div>
+                        </div>
+                    </div>
+                    <h2 class="text-2xl font-bold mb-4">
+                        Top reasons to study here
+                    </h2>
+                    <ul class="list-disc pl-5 text-lg">
+                        <li class="mb-2">
+                            A caring campus - we offer a range of free, confidential advice and support services
+                            that fully support
+                            our students
+                        </li>
+                        <li class="mb-2">
+                            Employability - Personal and professional development is embedded at the heart of
+                            students' learning
+                            experience.
+                        </li>
+                        <li class="mb-2">
+                            Student life - At Surrey, we make sure that your university experience is as varied and
+                            fulfilling as
+                            possible
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</main>

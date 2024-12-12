@@ -1,0 +1,371 @@
+
+/* header */
+.SearchRowColBlock{
+    display: flex;
+    justify-content: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.MainMenuSections{
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style-type: none;
+}
+
+.SectionNavigationItem{
+    padding: 20px;
+    color: #247BA0;
+}
+
+.SectionNavigationItem a{
+    text-decoration: none;
+}
+
+#HeaderSearch{
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.InputWrapper{
+    padding: 5px;
+}
+
+.SearchButton{
+    padding: 7px 12px;
+    background-color: #f95c39;
+    border: none;
+    border-radius: 0 6px;
+}
+
+.SearchButton i{
+    color: #edf1ff;
+}
+
+.AccountModule{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.AccountModule a{
+    text-decoration: none;
+    color: #247BA0;
+}
+
+.AccountModule > *{
+    margin: 8px;
+}
+#LoggedInToggle{
+    border: none;
+    background-color: white;
+    color: #247BA0;
+}
+
+/* Body */
+.Main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 40px;
+}
+
+.Content{
+    width: 80%;
+    display: flex;
+
+}
+
+.Content-left{
+    margin-right: 20px;
+}
+
+.SelectedFiltersContainer{
+    padding: 2px;
+    background-color: #f95c39;
+}
+
+.HeaderUniversity{
+    padding: 20px 0;
+    margin: 0 8px;
+    border-bottom: 1px #e0e1e3 solid;
+}
+
+.University-Optionlist{
+    padding: 20px 0;
+    margin: 0 8px;
+    border-bottom: 1px #e0e1e3 solid;
+}
+
+.University-contain{
+    display: flex;
+    font-size: 0;
+    border: 1px solid;
+    padding: 6px;
+}
+
+.Search-left{
+    outline: none; /* Bỏ đường viền mặc định khi focus */
+    border: none;  /* Bỏ border (nếu cần) */
+}
+
+/* Location */
+.Location-Optionlist{
+    list-style-type: none;
+}
+
+.HeaderLocation{
+    padding: 20px 0;
+    margin: 0 8px;
+    border-bottom: 1px #e0e1e3 solid;
+}
+
+.Location-Optionlist{
+    padding: 0 10px;
+}
+
+.Location-Optionlist li{
+    padding: 5px;
+}
+
+/* Discipline */
+.Discipline i{
+    color: #606061;
+}
+
+.Discipline-Optionlist{
+    list-style-type: none;
+}
+
+.HeaderDiscipline{
+    padding: 20px 0;
+    margin: 0 8px;
+    border-bottom: 1px #e0e1e3 solid;
+}
+
+.Discipline-Optionlist{
+    padding: 0 10px;
+}
+
+.Discipline-Optionlist li{
+    padding: 5px;
+}
+
+.Discipline-Optionlist li a{
+    text-decoration: none;
+    color: #606061;
+}
+
+/* Attendance */
+.Attendance i{
+    color: #606061;
+}
+
+.Attendance-Optionlist{
+    list-style-type: none;
+}
+
+.HeaderAttendance{
+    padding: 20px 0;
+    margin: 0 8px;
+    border-bottom: 1px #e0e1e3 solid;
+}
+
+.Attendance-Optionlist{
+    padding: 0 10px;
+}
+
+.Attendance-Optionlist li{
+    padding: 5px;
+}
+
+.Attendance-Optionlist li span{
+    color: #606061;
+}
+/* ListCard */
+.SearchResults{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center; /* Căn giữa nội dung theo trục dọc */
+    justify-items: center; /* Căn giữa nội dung theo trục ngang */
+    list-style-type: none;
+    background-color: #f0f1f3;
+}
+
+.SearchResultsItem{
+    background-color: #ffffff;
+    padding: 10px;
+    margin: 20px;
+}
+
+.ScholarshipCard{
+    text-decoration: none;
+    border: 0;
+    line-height: 1.6em;
+    margin: 0;
+    padding: 0;
+    vertical-align: initial;
+}
+
+.ScholarshipSearchHeader{
+    padding: 12px;
+}
+
+.SearchHeader{
+    padding: 12px 0;
+}
+
+.SearchHeader h1{
+    font-size: 1.5rem;
+}
+
+.NavigationButtons button{
+    border: none;
+    background-color: #fff;
+    cursor: pointer;
+}
+
+.NavigationButtons button:nth-child(1){
+    padding-right: 20px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.ScholarshipProvider-University{
+    background-color: #fef7e9;
+    color: #181818;
+    border: 3px solid #fef7e9;
+    border-radius: .5rem 0 1.5rem;
+    font-size: .75rem;
+    font-weight: 400;
+    line-height: 1rem;
+    padding: .5rem 3rem .5rem 1rem;
+    width: fit-content;
+}
+
+.ScholarshipCardQuickFacts{
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    justify-content: space-between;
+}
+
+.ContainQF{
+    margin-right: 12rem;
+}
+
+.QFLabel{
+    color: #606061;
+    font-size: .75rem;
+    font-weight: 400;
+    line-height: 1rem;
+
+}
+
+.QFValue{
+    font-size: 1rem;
+    font-weight: 700;
+    line-height: 1.5rem;
+    color: black;
+    width: 100px;
+}
+
+.UnavailableInfo{
+    color: #808080;
+}
+
+.ScholarshipName{
+    display: block;
+    margin-block-start: 0.83em;
+    margin-block-end: 0.83em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+    unicode-bidi: isolate;
+    color: #05293C;
+}
+
+.ApplicationBasis{
+    background-color: #f0f1f3;
+    margin-left: 5px;
+    padding: 5px;
+    font-size: .75rem;
+    color: black;
+}
+
+.LinkHighlight{
+    color: #125BC9;
+    font-size: 0.75rem;
+}
+
+.ScholarshipCardFooter{
+    display: flex;
+    align-items: center;
+}
+
+.ScholarshipCardFooter *{
+    color: black;
+}
+
+.ProviderLogo{
+    margin-right: 10px;
+}
+
+.Name{
+    font-size: .75rem;
+}
+
+.Location{
+    font-size: .75rem;
+    color: #606061;
+}
+.bg-light-gray {
+    background-color: #f0f0f0; /* Màu xám sáng nhẹ */
+  }
+  
+  .text-dark {
+    color: #333; /* Màu chữ tối để dễ đọc */
+  }
+  
+  .bg-light-gray:hover {
+    background-color: #e0e0e0; /* Khi hover, nền sẽ hơi tối hơn */
+  }
+  
+.NavigationContainer{
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 2rem 0;
+    width: 100%;
+}
+
+.PreviousButton{
+    width: 117px;
+    background: #05293c1a;
+    border-radius: 3px;
+    display: block;
+    left: 0;
+    transition: all .15s linear;
+    padding: 10px;
+}
+
+.PageCountLabel{
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5rem;
+    margin: 0 32px;
+}
+
+.NextButton{
+    width: 117px;
+    background: #05293c1a;
+    border-radius: 3px;
+    display: block;
+    left: 0;
+    transition: all .15s linear;
+    padding: 10px;
+}

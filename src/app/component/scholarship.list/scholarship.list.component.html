@@ -1,0 +1,222 @@
+<div class="Main">
+    <div class="Content">
+        <div class="w-1/4 p-4 bg-white shadow">
+            <div>
+                <div class="w-full max-w-xs">
+                    <div class="border-b-2 border-orange-500 mb-4"></div>
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-university text-2xl mr-2"></i>
+                        <span class="text-xl font-semibold">University</span>
+                    </div>
+                    <div class="border-b mb-4"></div>
+                    <div class="mb-2 text-lg font-semibold">Search</div>
+                    <div class="relative">
+                        <!-- Input field -->
+                        <input type="text" placeholder="Scholarship information" [(ngModel)]="keyword"
+                            (input)="onSearch($event)"
+                            class="w-full border border-gray-400 p-2 pl-4 pr-10 rounded" />
+                        <i (click)="search()" class="fas fa-search absolute right-3 top-3 text-gray-500"></i>
+                        <!-- Nút "X" để đóng dropdown khi tìm kiếm -->
+                        <i *ngIf="keyword && showDropdown" (click)="closeDropdown()" class="fas fa-times absolute right-8 top-3 text-gray-500  cursor-pointer"></i>
+                        <!-- Dropdown suggestions -->
+                        <ul *ngIf="scholarshipOptions.length > 0"
+                            class="absolute left-0 w-full bg-white border border-gray-300 mt-1 rounded shadow-md max-h-40 overflow-y-auto z-10">
+                            <li *ngFor="let scholarship of scholarshipOptions"
+                                (click)="selectScholarship(scholarship.id)" class="p-2 hover:bg-gray-100 cursor-pointer">
+                                {{ scholarship.name }}
+                            </li>   
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="mb-4">
+                <h2 class="text-lg font-bold flex items-center cursor-pointer"
+                    onclick="toggleMenu('location-menu')">
+                    <i class="fas fa-map-marker-alt mr-2">
+                    </i>
+                    Location
+                    <i class="fas fa-chevron-down ml-auto">
+                    </i>
+                </h2>
+                <div class="mt-2" id="location-menu" style="display: block;">
+                    <div class="flex items-center">
+                        <span class="font-bold">
+                            Country
+                        </span>
+                    </div>
+                    <div class="mt-2">
+                        <label class="block">
+                            <input class="mr-2" type="radio" name="country" value="GB" (change)="onCountryChange('GB')" />
+                            United Kingdom
+                        </label>
+                        <label class="block mt-2">
+                            <input class="mr-2" type="radio" name="country" value="US" (change)="onCountryChange('US')" />
+                            United States
+                        </label>
+                        <label class="block mt-2">
+                            <input class="mr-2" type="radio" name="country" value="CA" (change)="onCountryChange('CA')" />
+                            Canada
+                        </label>
+                        <label class="block mt-2">
+                            <input class="mr-2" type="radio" name="country" value="DE" (change)="onCountryChange('DE')" />
+                            Germany
+                        </label>
+                        <label class="block mt-2">
+                            <input class="mr-2" type="radio" name="country" value="AU" (change)="onCountryChange('AU')" />
+                            Australia
+                        </label>
+                    </div>                    
+                </div>
+            </div>
+            <div class="mb-4">
+                <h2 class="text-lg font-bold flex items-center cursor-pointer"
+                    onclick="toggleMenu('disciplineMenu')">
+                    <i class="fas fa-th-large mr-2">
+                    </i>
+                    Discipline
+                    <i class="fas fa-chevron-down ml-auto">
+                    </i>
+                </h2>
+                <ul class="mt-2" id="disciplineMenu" style="display: block;">
+                    <li class="flex hover:cursor-pointer items-center mb-2" id="606" 
+                        (click)="searchByDiscipline('606')"
+                        [ngClass]="{'bg-light-gray text-dark': selectedDisciplineId === '606'}">
+                      <i class="fas fa-paint-brush mr-2"></i>
+                      Arts &amp; Design
+                    </li>
+                    <li class="flex hover:cursor-pointer items-center mb-2" id="808" 
+                        (click)="searchByDiscipline('808')"
+                        [ngClass]="{'bg-light-gray text-dark': selectedDisciplineId === '808'}">
+                      <i class="fa-solid fa-pen-ruler mr-2"></i>
+                      Architecture
+                    </li>
+                    <li class="flex hover:cursor-pointer mb-2" id="111"  
+                        (click)="searchByDiscipline('111')"
+                        [ngClass]="{'bg-light-gray text-dark': selectedDisciplineId === '111'}">
+                      <i class="fa-solid fa-book mr-2"></i>
+                      Languages
+                    </li>
+                    <li class="flex hover:cursor-pointer items-center mb-2" id="202" 
+                        (click)="searchByDiscipline('202')"
+                        [ngClass]="{'bg-light-gray text-dark': selectedDisciplineId === '202'}">
+                      <i class="fas fa-briefcase mr-2"></i>
+                      Business Administration
+                    </li>
+                    <li class="flex hover:cursor-pointer items-center mb-2" id="789" 
+                        (click)="searchByDiscipline('789')"
+                        [ngClass]="{'bg-light-gray text-dark': selectedDisciplineId === '789'}">
+                      <i class="fas fa-laptop-code mr-2"></i>
+                      Computer Science
+                    </li>
+                    <li class="flex hover:cursor-pointer items-center mb-2" id="123" 
+                        (click)="searchByDiscipline('123')"
+                        [ngClass]="{'bg-light-gray text-dark': selectedDisciplineId === '123'}">
+                      <i class="fas fa-laptop-code mr-2"></i>
+                      Information Technology
+                    </li>
+                    <li class="flex hover:cursor-pointer items-center mb-2" id="505" 
+                        (click)="searchByDiscipline('505')"
+                        [ngClass]="{'bg-light-gray text-dark': selectedDisciplineId === '505'}">
+                      <i class="fas fa-chalkboard-teacher mr-2"></i>
+                      Education &amp; Training
+                    </li>
+                    <li class="flex hover:cursor-pointer items-center mb-2" id="909" 
+                        (click)="searchByDiscipline('909')"
+                        [ngClass]="{'bg-light-gray text-dark': selectedDisciplineId === '909'}">
+                      <i class="fas fa-leaf mr-2"></i>
+                      Data Science
+                    </li>
+                    <li class="flex hover:cursor-pointer items-center mb-2" id="456" 
+                        (click)="searchByDiscipline('456')"
+                        [ngClass]="{'bg-light-gray text-dark': selectedDisciplineId === '456'}">
+                      <i class="fas fa-newspaper mr-2"></i>
+                      Marketing
+                    </li>
+                    <li class="flex hover:cursor-pointer items-center mb-2" id="404" 
+                        (click)="searchByDiscipline('404')"
+                        [ngClass]="{'bg-light-gray text-dark': selectedDisciplineId === '404'}">
+                      <i class="fas fa-balance-scale mr-2"></i>
+                      Law
+                    </li>
+                    <li class="flex hover:cursor-pointer items-center mb-2" id="101" 
+                        (click)="searchByDiscipline('101')"
+                        [ngClass]="{'bg-light-gray text-dark': selectedDisciplineId === '101'}">
+                      <i class="fas fa-heartbeat mr-2"></i>
+                      Medicine &amp; Health
+                    </li>
+                    <li class="flex hover:cursor-pointer items-center mb-2" id="303" 
+                        (click)="searchByDiscipline('303')"
+                        [ngClass]="{'bg-light-gray text-dark': selectedDisciplineId === '303'}">
+                      <i class="fas fa-users mr-2"></i>
+                      Social Sciences
+                    </li>
+                  </ul>
+                  
+            </div>  
+        </div>
+        <div class="Content-right">
+            <div class="ScholarshipSearchHeader">
+                <div class="SearchHeader">
+                    <h1>Scholarships for Master's students</h1>
+                </div>
+                <div class="NavigationButtons">
+                    <a class="text-gray-600 hover:text-blue-600 ml-4" href="/truong-hoc">
+                        Universities
+                    </a>
+                    <a class="text-gray-600 hover:text-blue-600 ml-4" href="/hoc-bong">
+                        Scholarships
+                    </a>
+                </div>
+            </div>
+            <ul class="SearchResults">
+                <li class="SearchResultsItem" *ngFor="let scholarship of scholarships">
+                    <a class="ScholarshipCard" (click)="navDetail(scholarship.id)">
+                        <div class="ScholarshipProvider-University">Provided by university</div>
+                        <div class="ScholarshipCardContent">
+                            <div class="ScholarshipCardQuickFacts">
+                                <div class="ContainQF">
+                                    <div class="QFLabel">Grant</div>
+                                    <div class="QFValue">{{scholarship.grantAmount}}</div>
+                                </div>
+                                <div>
+                                    <div class="QFLabel">DeadLine</div>
+                                    <div class="QFValue UnavailableInfo">{{scholarship.endDate}}</div>
+                                </div>
+                            </div>
+                            <h2 class="ScholarshipName">{{scholarship.name}}</h2>
+                            <p class="ApplicationBasisContainer">
+                                <span class="ApplicationBasis">Merit-based</span>
+                            </p>
+                            <p class="LinkHighlight">
+                                Read more about eligibility
+                                <i class="Lnr-arrow-right"></i>
+                            </p>
+                            <div class="ScholarshipCardFooter">
+                                <div class="ProviderLogo">
+                                    <i class="fa-solid fa-school"></i>
+                                </div>
+                                <div class="ProviderDetails">
+                                    <div class="Name">{{scholarship.schoolName}}</div>
+                                    <div class="Location">{{scholarship.countryName}}</div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </li>
+                <div *ngIf="scholarships.length == 0">No data</div>
+            </ul>
+
+            <div *ngIf="scholarships.length != 0 "class="NavigationContainer">
+                <button class="PreviousButton" (click)="previousPage()">
+                    <i class="fa-solid fa-arrow-left"></i>
+                    <span> Previous</span>
+                </button>
+                <p class="PageCountLabel">{{currentPage}} of {{totalsPages}}</p>
+                <Button class="NextButton" (click)="nextPage()">
+                    <span>Next</span>
+                    <i class="fa-solid fa-arrow-right"></i>
+                </Button>
+            </div>
+        </div>
+    </div>
+</div>
