@@ -137,6 +137,7 @@ export class SchoolListComponent implements OnInit {
       },
       queryParamsHandling: 'merge',
     });
+    this.showDropdown = false;  
   }
 
   changePage(page: number): void {

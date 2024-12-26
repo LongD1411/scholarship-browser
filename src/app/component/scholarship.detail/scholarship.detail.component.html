@@ -57,8 +57,10 @@
         </div>
         <div class="mdc-layout-grid">
             <div class="AboutSection">
-                <h2 class="SectionTitle">About</h2>
-                <p>{{scholarship?.description}}</p>
+                <h2 *ngIf="scholarship?.description" class="SectionTitle">About</h2>
+                <p *ngIf="scholarship?.description">{{scholarship?.description}}</p>
+                <h2 *ngIf="scholarship?.eligibility" class="SectionTitle">Eligibility</h2>
+                <p *ngIf="scholarship?.eligibility">{{scholarship?.eligibility}}</p>
             </div>
             <div class="Module_Card">
                 <header class="Organisation">

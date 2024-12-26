@@ -92,7 +92,7 @@ navDetail(id:number) {
     }
   }
   closeDropdown() {
-    this.showDropdown = false; // Đóng dropdown
+    this.showDropdown = false;
   }
   selectScholarship(id: number): void {
     console.log(id);
@@ -156,6 +156,7 @@ navDetail(id:number) {
 
   search() {
     this.searchSchoolarship(this.keyword,this.countryCode,this.fosId,this.currentPage,this.limit)
+    this.showDropdown = false;  
   }
 
   changePage(page: number): void {

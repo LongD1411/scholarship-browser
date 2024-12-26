@@ -1,8 +1,14 @@
-*{
+body, html {
     margin: 0;
     padding: 0;
-    font-size: 18px;
+    min-height: 100vh; /* Đảm bảo chiều cao tối thiểu bằng chiều cao màn hình */
+    display: flex;
+    flex-direction: column; /* Căn chỉnh theo chiều dọc */
 }
+main {
+    flex: 1;
+}
+
 
 /* header */
 .SearchRowColBlock{
@@ -18,7 +24,6 @@
     align-items: center;
     list-style-type: none;
 }
-
 .SectionNavigationItem{
     padding: 20px;
     color: #247BA0;
@@ -75,6 +80,9 @@
 /* Footer */
 .Footer{
     background-color: #edf1ff;
+    width: 100%; /* Chiếm đủ chiều ngang */
+    box-shadow: 0 -1px 5px rgba(0, 0, 0, 0.1); /* Đổ bóng nhẹ */
+    margin-top: auto; /* Đẩy footer xuống cuối */
 }
 
 .FooterBranding{
