@@ -90,7 +90,7 @@ export class SchoolListComponent implements OnInit {
     this.showDropdown = false; // Đóng dropdown
   }
   selectUniversity(id: number): void {
-    console.log(id);
+    window.location.href = `/truong-hoc/chi-tiet?id=${id}`;
   }
   searchSchools(
     keyword: string,

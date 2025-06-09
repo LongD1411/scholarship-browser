@@ -11,10 +11,10 @@ main {
 
 
 /* header */
-.SearchRowColBlock{
-    display: flex; 
-    justify-content: center;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+.SearchRowColBlock {
+  display: flex;
+  justify-content: center;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
 .MainMenuSections{
@@ -36,7 +36,7 @@ main {
 #HeaderSearch{
     height: 100%;
     display: flex;
-    justify-content: center;
+    justify-content: left;
     align-items: center;
 }
 

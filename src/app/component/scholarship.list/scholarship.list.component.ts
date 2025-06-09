@@ -23,9 +23,9 @@ import { FormsModule } from '@angular/forms';
   styleUrl: './scholarship.list.component.css',
 })
 export class ScholarshipListComponent implements OnInit {
-navDetail(id:number) {
-  window.location.href = `/hoc-bong/chi-tiet?id=${id}`
-}
+  navDetail(id: number) {
+    window.location.href = `/hoc-bong/chi-tiet?id=${id}`;
+  }
   scholarships: ScholashipResponse[] = [];
   keyword: string = '';
   currentPage: number = 1;
@@ -95,7 +95,7 @@ navDetail(id:number) {
     this.showDropdown = false;
   }
   selectScholarship(id: number): void {
-    console.log(id);
+    window.location.href = `/hoc-bong/chi-tiet?id=${id}`;
   }
   searchSchoolarship(
     keyword: string,
@@ -155,8 +155,14 @@ navDetail(id:number) {
   }
 
   search() {
-    this.searchSchoolarship(this.keyword,this.countryCode,this.fosId,this.currentPage,this.limit)
-    this.showDropdown = false;  
+    this.searchSchoolarship(
+      this.keyword,
+      this.countryCode,
+      this.fosId,
+      this.currentPage,
+      this.limit
+    );
+    this.showDropdown = false;
   }
 
   changePage(page: number): void {
@@ -176,7 +182,7 @@ navDetail(id:number) {
       });
     }
   }
-  
+
   changePageIfValid(page: string | number): void {
     if (typeof page === 'number') {
       this.changePage(page);
