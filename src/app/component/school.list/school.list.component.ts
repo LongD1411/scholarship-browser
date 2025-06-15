@@ -3,7 +3,6 @@ import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { SchoolService } from '../../service/school.service';
 import { FormsModule } from '@angular/forms';
-import { SchoolResponse } from '../../response/school.respone';
 import {
   catchError,
   debounceTime,
@@ -12,9 +11,10 @@ import {
   Subject,
   switchMap,
 } from 'rxjs';
-import { BaseResponse } from '../../response/base.response';
 import { enviroment } from '../../enviroment/enviroment';
 import { HttpClient } from '@angular/common/http';
+import { SchoolResponse } from '../../response/school.respone';
+import { BaseResponse } from '../../response/base.response';
 
 @Component({
   selector: 'app-field.of.study',

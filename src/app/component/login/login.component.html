@@ -1,0 +1,50 @@
+<div  (click)="homeNavigate()" class="nav-link" style="margin-top: 10px; margin-left: 30px; cursor: pointer;font-size: 30px;">
+  <i class="fa-solid fa-arrow-left"></i> Home
+</div>
+<div class="only-bootstrap">
+  <div class="container">
+    <form [formGroup]="loginForm">
+      <div class="row">
+        <div class="col-md-6 offset-md-3">
+          <div class="login-form mx-auto">
+            <h1 class="login-header" style="font-size: 25px;">Đăng nhập</h1>
+            <div class="form-group">
+              <label for="email">Tên tài khoản</label>
+              <input type="text" class="form-control" id="email" formControlName="email" [ngClass]="{
+                  'is-valid':
+                    loginForm.get('email')?.valid &&
+                    (loginForm.get('email')?.touched ||
+                      loginForm.get('email')?.dirty),
+                  'is-invalid':
+                    !loginForm.get('email')?.valid &&
+                    (loginForm.get('email')?.touched ||
+                      loginForm.get('email')?.dirty)
+                }" />
+            </div>
+            <div class="form-group password-field">
+              <label for="password">Mật khẩu</label>
+              <input type="password" class="form-control" id="password" formControlName="password" [ngClass]="{
+                  'is-invalid':
+                    !loginForm.get('password')?.valid &&
+                    (loginForm.get('password')?.touched ||
+                      loginForm.get('password')?.dirty)
+                }" />
+            </div>
+            <button type="submit" class="login-button" (click)="submitHandler()" [disabled]="!loginForm.valid">Đăng nhập</button>
+            <div class="divider"></div>
+            <p class="al text-center">
+            Bạn chưa có tài khoản ?
+            <span><a routerLink="/dang-ki" class="login-link">Đăng kí</a></span>
+           </p>
+          </div>
+        </div>
+      </div>
+      <!-- <form action="http://localhost:8088/oauth2/authorization/google" method="GET">
+          <button type="submit" class="login-with-google-btn mt-2">
+            Sign in with Google
+          </button>
+    </form > -->
+    </form>
+  </div>
+  </div>
+  

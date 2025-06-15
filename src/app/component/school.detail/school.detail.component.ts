@@ -19,7 +19,7 @@ export class SchoolDetailComponent implements OnInit {
       this.id = params['id'];
     });
     if(this.id){
-      this.schoolService.getSchool(this.id).subscribe({
+      this.schoolService.getSchool(Number.parseInt(this.id)).subscribe({
         next:(response)=>{
           this.school= response.result
         }

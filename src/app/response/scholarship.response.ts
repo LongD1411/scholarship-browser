@@ -13,7 +13,7 @@ export interface ScholashipResponse {
   startDate: Date;
   quantity: number;
   schoolName: string;
-  schoolId: string;
+  schoolId: number;
   isActive: boolean;
   fieldOfStudyName: string;
   fieldOfStudyId: string;
@@ -22,4 +22,5 @@ export interface ScholashipResponse {
   updatedAt: Date;
   url: string;
   schoolRank: string;
+  schoolLogo:string;
 }

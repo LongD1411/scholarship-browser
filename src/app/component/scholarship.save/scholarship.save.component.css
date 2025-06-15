@@ -1,0 +1,118 @@
+.box {
+  margin: 30px;
+  border: 1px solid rgb(207, 207, 207);
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.banner {
+  padding:30px 20px;
+  background: linear-gradient(to right, #117bf5, #75bfff);
+  color: white;
+}
+
+.scholarship-total {
+  padding: 20px;
+}
+.title-1{
+    font-size: 26px;
+}
+.description{
+    max-width: 500px;
+}
+.list{
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.scholarship-item{
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid rgb(232, 232, 232);
+    display: flex;
+    gap: 20px;
+    
+}
+.avatar {
+  flex: 0 0 120px;
+  height: 120px;
+  padding: 10px;
+  border: 1px solid rgb(232, 232, 232);
+  border-radius: 5px;
+}
+
+.w-100 {
+  width: 100px;
+  height: 100px;
+}
+.body{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    color: rgb(103, 103, 103);
+}
+.title-block{
+    display: flex;
+    justify-content: space-between;
+    gap:10px
+}
+.title{
+  font-size: 18px;
+  max-width: 400px;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.title p{
+  text-decoration: none;
+  color: rgb(56, 56, 56);
+}
+.title-salary{
+    color: #117bf5;
+    font-weight: bold;
+}
+.university{
+    color: rgb(103, 103, 103);
+    text-decoration: none;
+}
+.university:hover{
+    cursor: pointer;
+}
+.infor {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.infor-1 {
+  display: flex;
+  gap: 10px;
+  align-items: center; 
+}
+
+.infor-block {
+  font-size: 12px;
+  padding: 3px 10px;
+  background-color: rgb(235, 235, 235);
+  border-radius: 3px;
+  color: black;
+}
+
+.icon {
+  padding: 6px 15px;   
+  background-color: rgb(235, 235, 235);
+  border-radius: 3px;
+  color: black;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.title p:hover{
+  color: #117bf5;
+  cursor: pointer;
+}

@@ -14,6 +14,7 @@ import { BaseResponse } from '../../response/base.response';
 import { enviroment } from '../../enviroment/enviroment';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { SweetAlertService } from '../../service/sweet.alert.service';
 
 @Component({
   selector: 'app-scholarship.list',
@@ -23,6 +24,7 @@ import { FormsModule } from '@angular/forms';
   styleUrl: './scholarship.list.component.css',
 })
 export class ScholarshipListComponent implements OnInit {
+
   navDetail(id: number) {
     window.location.href = `/hoc-bong/chi-tiet?id=${id}`;
   }
@@ -45,8 +47,9 @@ export class ScholarshipListComponent implements OnInit {
     private scholarshipService: ScholashipService,
     private route: ActivatedRoute,
     private router: Router,
-    private http: HttpClient
-  ) {}
+    private http: HttpClient,
+    private alert: SweetAlertService
+  ) { }
 
   ngOnInit(): void {
     this.route.queryParams.subscribe((params) => {
@@ -76,6 +79,8 @@ export class ScholarshipListComponent implements OnInit {
           console.error('Error fetching schools:', error);
         }
       );
+
+    this.fetchAndStoreSavedScholarships()
   }
   searchTerm: string = '';
   filteredUniversities: string[] = [];
@@ -220,6 +225,53 @@ export class ScholarshipListComponent implements OnInit {
     }
   }
   schoolDetail(id: number) {
-    window.location.href = `/hoc-bong/chi-tiet?id=${id}`;
+    window.location.href = `/truong-hoc/chi-tiet?id=${id}`;
   }
+  savedMap: Map<number, boolean> = new Map();
+  isSaved(id: number): boolean {
+    return this.savedMap.get(id) ?? false;
+  }
+  fetchAndStoreSavedScholarships(): void {
+    this.scholarshipService.getSavedScholarships().subscribe({
+      next: (response) => {
+        const scholarships = response.results;
+        this.savedMap.clear();
+        scholarships.forEach((scholarship: any) => {
+          this.savedMap.set(scholarship.id, true);
+        });
+      },
+      error: (err) => {
+        console.error('Lỗi khi lấy danh sách học bổng đã lưu:', err);
+      },
+    });
+  }
+
+  save(id: number): void {
+  if (!localStorage.getItem('access_token')) {
+    this.alert.showInfor("Đăng nhập để lưu");
+    return;
+  }
+  if (this.isSaved(id)) {
+    // Nếu đã lưu rồi thì xóa
+    this.scholarshipService.unSaveScholarship(id).subscribe({
+      next: () => {
+        this.savedMap.set(id, false);
+      },
+      error: (err) => {
+        this.alert.showError(err.error.message);
+      }
+    });
+  } else {
+    // Nếu chưa lưu thì lưu
+    this.scholarshipService.saveScholarship(id).subscribe({
+      next: () => {
+        this.savedMap.set(id, true);
+      },
+      error: (err) => {
+        this.alert.showError(err.error.message);
+      }
+    });
+  }
+}
+
 }

@@ -11,28 +11,6 @@
                             <span class="text-xl font-semibold">University</span>
                         </div>
                         <div class="border-b mb-4"></div>
-                        <div class="mb-2 text-lg font-semibold">Search by university</div>
-                        <div class="relative">
-                            <!-- Input field -->
-                            <input type="text" placeholder="University name" [(ngModel)]="keyword"
-                                (input)="onSearch($event)" class="w-full border border-gray-400 p-2 pl-4 pr-10 rounded" />
-                        
-                            <!-- Nút search -->
-                            <i (click)="search()" class="fas fa-search absolute right-3 top-3 text-gray-500"></i>
-                        
-                            <!-- Nút "X" để đóng dropdown khi tìm kiếm -->
-                            <i *ngIf="keyword && showDropdown" (click)="closeDropdown()" class="fas fa-times absolute right-8 top-3 text-gray-500  cursor-pointer"></i>
-                        
-                            <!-- Dropdown suggestions -->
-                            <ul *ngIf="showDropdown && schoolOptions.length > 0"
-                                class="absolute left-0 w-full bg-white border border-gray-300 mt-1 rounded shadow-md max-h-40 overflow-y-auto z-10">
-                                <li *ngFor="let university of schoolOptions"
-                                    (click)="selectUniversity(university.id)" class="p-2 hover:bg-gray-100 cursor-pointer">
-                                    {{ university.name }}
-                                </li>   
-                            </ul>
-                        </div>
-                        
                     </div>
                 </div>
                 <div class="mb-4">

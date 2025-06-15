@@ -25,7 +25,7 @@ export class SchoolService {
       params: param,
     });
   }
-  getSchool(id: string): Observable<BaseResponse<SchoolResponse>> {
+  getSchool(id: number): Observable<BaseResponse<SchoolResponse>> {
     const param = new HttpParams().set('id', id);
     return this.http.get<BaseResponse<SchoolResponse>>(this.apiSchool, {
       params: param,

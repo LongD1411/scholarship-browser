@@ -1,0 +1,49 @@
+ <div id="main">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 mx-auto">
+                    <div class="box">
+                        <div class="banner">
+                            <h1 class="title-1">Học bổng đã lưu</h1>
+                            <p class="description">Xem lại danh sách học bổng đã lưu trước đó. Truy cập ngay để không bỏ
+                                lỡ cơ hội học tập dành cho bạn</p>
+                        </div>
+                        <div *ngIf="scholarships.length > 0" class="scholarship-total">Danh sách <strong>3</strong> học bổng đã lưu</div>
+                        <div class="list">
+                            <ng-content *ngIf="scholarships.length == 0">
+                                <p style="font-size: 28px">Bạn chưa lưu học bổng nào</p>
+                            </ng-content>
+                            <ng-content *ngFor="let scholarship of scholarships">
+                                <div class="scholarship-item">
+                                <div class="avatar">
+                                    <a target="_blank">
+                                        <img class="w-100"[src]="scholarship.schoolLogo" />
+                                            </a>
+                                </div>
+                                <div class="body">
+                                    <div class="title-block">
+                                        <h3 class="title">
+                                            <p  (click)="selectScholarship(scholarship.id)">{{scholarship.name}}</p>
+                                        </h3>
+                                        <label class="title-salary">{{scholarship.grantAmount}}</label>
+                                    </div>
+                                    <p  class="university" (click)="schoolDetail(scholarship.schoolId)">{{scholarship.schoolName}}</p>
+                                    <!-- <label class="time-safe-scholarship">Đã lưu: 12/06/2025 - 16:19</label> -->
+                                    <div class="infor">
+                                        <div class="infor-1">
+                                            <label class="infor-block">{{scholarship.fieldOfStudyName}}</label>
+                                            <label class="infor-block">{{getTimeAgo(scholarship.updatedAt)}}</label>
+                                        </div>
+                                        <div class="icon">
+                                            <i class="fa fa-trash"></i> Bỏ lưu
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            </ng-content>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>

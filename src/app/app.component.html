@@ -1,25 +1,97 @@
-<header  id="NavBar">
-    <div class="SearchRowColBlock">
-      <div class="Brand" (click)="homeNav()">
-        <img src="//monet-prtl-co.imgix.net/Masters/LogoMastersPortalTransparent.svg" alt="MastersPortal"
-          id="PortalLogo" width="150" height="60" />
-      </div>
-      <div class="Module">
-        <ul class="MainMenuSections">
-          <li class="SectionNavigationItem">
-            <a (click)="universityNav()">
-              <i class="fa-solid fa-school mr-2"></i>
-              <span class="SectionNavigationLabel">University</span>
-            </a>
-          </li>
-          <li class="SectionNavigationItem">
-            <a (click)="scholarshipsNav()">
-              <i class="fa-solid fa-paper-plane mr-2"></i>
-              <span class="SectionNavigationLabel">Scholarship</span>
-            </a>
-          </li>
-        </ul>
-      </div>
+<div class="d-flex flex-column min-vh-100">
+  <header id="NavBar" *ngIf="!hideHeader">
+  <div class="SearchRowColBlock">
+    <div class="Brand" (click)="homeNav()">
+      <img src="//monet-prtl-co.imgix.net/Masters/LogoMastersPortalTransparent.svg" alt="MastersPortal" id="PortalLogo"
+        width="150" height="60" />
     </div>
-  </header>
+    <div class="Module">
+      <ul class="MainMenuSections">
+        <li class="SectionNavigationItem">
+          <a (click)="universityNav()">
+            <i class="fa-solid fa-school mr-2 custom-icon"></i>
+            <span class="SectionNavigationLabel">University</span>
+          </a>
+        </li>
+        <li class="SectionNavigationItem">
+          <a (click)="scholarshipsNav()">
+            <i class="fa-solid fa-paper-plane mr-2 custom-icon"></i>
+            <span class="SectionNavigationLabel">Scholarship</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+    <div class="search-container">
+      <!-- Ô tìm kiếm trường đại học -->
+      <div class="search-wrapper">
+        <div class="search-box">
+          <input class="search-input" style="border-radius:5px 0px 0px 5px;" type="text" (input)="onScholarshipInput($event)" placeholder="Tìm học bổng..." />
+          <ul class="dropdown" *ngIf="showScholarshipDropdown && filteredScholarships.length">
+            <li *ngFor="let item of filteredScholarships">
+              <a (click)="navDetail(item.id)">{{ item.name }}</a>
+            </li>
+          </ul>
+        </div>
+        <div class="search-box">
+        <input class="search-input" (input)="onSchoolInput($event)" style="border-left:none;" class="search-input" placeholder="Tìm trường đại học..." />
+        <ul class="dropdown" *ngIf="showSchoolDropdown && filteredSchools.length">
+            <li *ngFor="let item of filteredSchools">
+              <a (click)="selectUniversity(item.id)">{{ item.name }}</a>
+            </li>
+          </ul>
+        </div>
+        <button class="search-button" style="border-radius:0px 5px 5px 0px;">
+          <i class="fa fa-search"></i>
+        </button>
+      
+      </div>
+
+    </div>
+    <div class="Module user-module">
+      <ul class="MainMenuSections">
+        <li class="SectionNavigationItem">
+          <a>
+            <i class="fa-solid fa-bell custom-icon"></i>
+          </a>
+        </li>
+        <li class="SectionNavigationItem">
+          <a>
+            <i class="fa-solid fa-user mr-2 custom-icon"></i>
+            <span class="SectionNavigationLabel" *ngIf="user_name">{{user_name}}</span>
+            <span class="SectionNavigationLabel" *ngIf="!user_name">User</span>
+          </a>
+          <div class="popup-below">
+            <div *ngIf="access_token">
+              <div class="dropdown-item" (click)="savedNav()">Danh sách đã lưu</div>
+              <div class="dropdown-item" (click)="logout()">Đăng xuất</div>
+            </div> 
+            <div class="dropdown-login" *ngIf="!access_token">
+              <div class="dropdown-item" style="padding: 0px 5px;" (click)="loginNavigate()">Đăng nhập</div>
+              <div>|</div>
+              <div class="dropdown-item" style="padding: 0px 5px;" (click)="registerNavigate()">Đăng ký</div>
+            </div>           
+          </div>
+          
+        </li>
+      </ul>
+    </div>
+  </div>
+</header>
 <router-outlet></router-outlet>
+ <footer class="Footer" *ngIf="!hideHeader">
+    <section class="FooterBranding">
+      <a href="/trang-chu">
+        <img  src="//monet-prtl-co.imgix.net/Masters/LogoMastersPortalTransparent.svg" alt="MastersPortal"
+          id="PortalLogo" width="200" height="110">
+      </a>
+      <ul class="FooterDisclaimer">
+        <li><a href="">Terms of Use</a></li>
+        <li><a href="">Privacy & Cookie statment</a></li>
+        <li><a href="">Disclaimer</a></li>
+      </ul>
+    </section>
+    <section class="FooterCopyright">
+      Crafted with by our team of 4 members | Copyright  2024 LongDNguyen.
+    </section>
+  </footer>
+</div>

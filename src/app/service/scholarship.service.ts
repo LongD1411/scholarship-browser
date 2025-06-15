@@ -16,6 +16,9 @@ export class ScholashipService {
   private apiCountByCountry = `${enviroment.apiBaseUrl}/scholarship/scholarships-top-countries`;
   private apiCountByFieldOfStudy = `${enviroment.apiBaseUrl}/scholarship/scholarships-top-field-of-study`;
   private apiCountByTopSearch = `${enviroment.apiBaseUrl}/scholarship/top-search`;
+  private apiSaveScholarship = `${enviroment.apiBaseUrl}/user/save-scholarship`;
+  private apiGetSavedScholarships = `${enviroment.apiBaseUrl}/user/saved-scholarships`;
+  private apiUnSaveScholarship = `${enviroment.apiBaseUrl}/user/unsave-scholarship`;
   constructor(private http: HttpClient) {}
   getScholarships(
     keyword: string,
@@ -45,6 +48,27 @@ export class ScholashipService {
         params: param,
       }
     );
+  }
+  saveScholarship(id: number): Observable<BaseResponse<String>> {
+  const params = new HttpParams().set('id', id);
+  return this.http.post<BaseResponse<String>>(
+    this.apiSaveScholarship,
+      {}, 
+      { params } 
+  );
+  }
+  unSaveScholarship(id: number): Observable<BaseResponse<string>> {
+  const options = {
+    params: new HttpParams().set('id', id.toString())
+  };
+  return this.http.delete<BaseResponse<string>>(
+    this.apiUnSaveScholarship,
+    options
+  );
+}
+
+  getSavedScholarships(): Observable<BaseResponse<ScholashipResponse>> {
+    return this.http.get<BaseResponse<ScholashipResponse>>(this.apiGetSavedScholarships);
   }
   getExpiringScholarship():  Observable<BaseResponse<number>> {
     return this.http.get<BaseResponse<number>>(this.apiExpiringScholarship);
