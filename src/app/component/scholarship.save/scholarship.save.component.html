@@ -34,7 +34,7 @@
                                             <label class="infor-block">{{scholarship.fieldOfStudyName}}</label>
                                             <label class="infor-block">{{getTimeAgo(scholarship.updatedAt)}}</label>
                                         </div>
-                                        <div class="icon">
+                                        <div class="icon" (click)="unSave(scholarship.id)">
                                             <i class="fa fa-trash"></i> Bỏ lưu
                                         </div>
                                     </div>

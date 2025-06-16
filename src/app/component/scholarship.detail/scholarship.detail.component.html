@@ -2,16 +2,9 @@
         <div class="LayoutHero">
             <div class="GridInContainer">
                 <div class="EssentialInformationWrapper">
-                    <div class="InfoActionWrapper">
-                        <div class="js-cypressScholarshipsTag">Scholarships</div>
-                        <div class="js-cypressMeritTag">Merit-based</div>
-                    </div>
                     <a class="ProviderName" href="">{{scholarship?.schoolName}}</a>
                     <h1 class="ScholarshipName">{{scholarship?.name}}</h1>
-                    <a class="js-CTAButton" [href]="scholarship?.url">View page original</a>
-                    <div class="ConversionLinksWrapper">
-                        <span class="js-cypressConversionLinks">Find related programmes</span>
-                    </div>
+                    <a class="js-CTAButton" [href]="scholarship?.url">Truy cập trang gốc</a>
                 </div>
                 <div class="Module_QuickFacts">
                     <section class="QuickFacts">
@@ -21,7 +14,7 @@
                             </div>
                             <div class="LabelContainer">
                                 <div class="Title">{{scholarship?.fieldOfStudyName}}</div>
-                                <div class="Lable">Disciplines</div>
+                                <div class="Lable">Chuyên ngành</div>
                             </div>
                         </div>
                         <div class="QuickFact">
@@ -30,7 +23,7 @@
                             </div>
                             <div class="LabelContainer">
                                 <div class="Title">{{scholarship?.grantAmount}}</div>
-                                <div class="Lable">Grant</div>
+                                <div class="Lable">Trợ cấp</div>
                             </div>
                         </div>
                         <div class="QuickFact">
@@ -39,7 +32,7 @@
                             </div>
                             <div class="LabelContainer">
                                 <div class="Title">{{scholarship?.countryName}}</div>
-                                <div class="Lable">Location</div>
+                                <div class="Lable">Vị trí</div>
                             </div>
                         </div>
                         <div class="QuickFact">
@@ -48,7 +41,7 @@
                             </div>
                             <div class="LabelContainer">
                                 <div class="Title">{{scholarship?.endDate}}</div>
-                                <div class="Lable">Application deadline</div>
+                                <div class="Lable">Hạn nộp hồ sơ</div>
                             </div>
                         </div>
                     </section>
@@ -57,10 +50,10 @@
         </div>
         <div class="mdc-layout-grid">
             <div class="AboutSection">
-                <h2 *ngIf="scholarship?.description" class="SectionTitle">About</h2>
-                <p *ngIf="scholarship?.description">{{scholarship?.description}}</p>
-                <h2 *ngIf="scholarship?.eligibility" class="SectionTitle">Eligibility</h2>
-                <p *ngIf="scholarship?.eligibility">{{scholarship?.eligibility}}</p>
+                <h2 *ngIf="scholarship?.description" class="SectionTitle">Thông tin chi tiết</h2>
+                <div  *ngIf="scholarship?.description" class="ckeditor-content" [innerHTML]="scholarship?.description"></div>
+                <h2 *ngIf="scholarship?.eligibility" class="SectionTitle">Điều kiện</h2>
+                <div  *ngIf="scholarship?.eligibility" class="ckeditor-content" [innerHTML]="scholarship?.eligibility"></div>
             </div>
             <div class="Module_Card">
                 <header class="Organisation">
@@ -82,18 +75,18 @@
                         <a  class="js-workdRankingReadMoreButton">
                             <div class="RankingDeatails">
                                 <span class="RankingIcon">
-                                    <i class="fa-solid fa-house"></i>
+                                    <img s [src]="scholarship?.schoolLogo"/>
                                 </span>
                                 <div class="ValueAndLocation">
                                     <span *ngIf="scholarship?.schoolRank" class="Value">Ranking {{scholarship?.schoolRank}}</span>
                                     <span *ngIf="scholarship?.schoolRank == null" class="Value">Unrank</span>
-                                    <span class="Location">World</span>
+                                    <span class="Location">Thế giới</span>
                                 </div>
                             </div>
-                            <span class="RankingName">Studyportals University Meta Ranking</span>
+                            <span class="RankingName">Cung cấp bởi Quacquarelli Symonds</span>
                         </a>
                     </div>
-                    <div class="Reviews">
+                    <!-- <div class="Reviews">
                         <span class="Rating-IsRanked">
                             <span class="Value">5.0</span>
                             <span class="Stars">
@@ -105,13 +98,13 @@
                             </span>
                         </span>
                         <span class="ReadMore-ReadReviews">Read 56 reviews</span>
-                    </div>
+                    </div> -->
                 </div>
                 <div class="OrganisationReadMore">
-                    Featured by
-                    <a href="" class="FeaturedBy">
+                    Truy cập ngay
+                    <p (click)="schoolDetail(scholarship!.schoolId)" class="FeaturedBy">
                         {{scholarship?.schoolName}}
-                    </a>
+                    </p>
                 </div>
             </div>
         </div>

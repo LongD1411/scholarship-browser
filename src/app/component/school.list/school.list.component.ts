@@ -19,7 +19,7 @@ import { BaseResponse } from '../../response/base.response';
 @Component({
   selector: 'app-field.of.study',
   standalone: true,
-  imports: [RouterLink, CommonModule, FormsModule],
+  imports: [CommonModule, FormsModule],
   templateUrl: './school.list.component.html',
   styleUrl: './school.list.component.css',
   
@@ -49,6 +49,7 @@ export class SchoolListComponent implements OnInit {
     this.route.queryParams.subscribe((params) => {
       const page = params['page'] || 1;
       this.keyword = params['keyword'] || '';
+      this.countryCode = params['countryCode'] || '';
       this.currentPage = page;
       this.searchSchools(
         this.keyword,
@@ -87,7 +88,7 @@ export class SchoolListComponent implements OnInit {
     }
   }
   closeDropdown() {
-    this.showDropdown = false; // Đóng dropdown
+    this.showDropdown = false;
   }
   selectUniversity(id: number): void {
     window.location.href = `/truong-hoc/chi-tiet?id=${id}`;
@@ -103,6 +104,7 @@ export class SchoolListComponent implements OnInit {
       .subscribe({
         next: (response) => {
           this.schools = response.results;
+          console.log(this.schools)
           this.totalsPages = response.totalPages;
           this.totalSchools = response.totalItems;
         },
@@ -139,7 +141,14 @@ export class SchoolListComponent implements OnInit {
     });
     this.showDropdown = false;  
   }
-
+  onCountryChange(country: string): void {
+    if (this.countryCode == country) {
+      this.countryCode = '';
+    } else {
+      this.countryCode = country;
+    }
+    this.search();
+  }
   changePage(page: number): void {
     if (page >= 1 && page <= this.totalsPages) {
       this.currentPage = page;
@@ -162,14 +171,6 @@ export class SchoolListComponent implements OnInit {
     }
   }
 
-  onCountryChange(country: string): void {
-    if (this.countryCode == country) {
-      this.countryCode = '';
-    } else {
-      this.countryCode = country;
-    }
-    this.search();
-  }
   navigateNewSchool() {
     window.location.href = '/truong-hoc/chinh-sua';
   }

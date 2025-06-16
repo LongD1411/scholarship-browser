@@ -18,7 +18,7 @@ export class SchoolService {
   ): Observable<BaseResponse<SchoolResponse>> {
     const param = new HttpParams()
       .set('keyword', keyword)
-      .set('coutryCode',countryCode)
+      .set('countryCode',countryCode)
       .set('page', page)
       .set('limit', limit);
     return this.http.get<BaseResponse<SchoolResponse>>(this.apiSchool, {

@@ -32,6 +32,16 @@ export class ScholarshipSaveComponent implements OnInit {
       }
     });
   }
+  unSave(id:number){
+    this.scholarshipService.unSaveScholarship(id).subscribe({
+      next: (response)=>{
+        this.loadView()
+      },
+      error :(error)=>{
+        this.alert.showError(error.error.message)
+      }
+    })
+  }
   selectScholarship(id: number): void {
     window.location.href = `/hoc-bong/chi-tiet?id=${id}`;
   }

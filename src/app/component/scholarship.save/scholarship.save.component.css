@@ -71,6 +71,9 @@
   text-decoration: none;
   color: rgb(56, 56, 56);
 }
+.icon:hover{
+  cursor:pointer;
+}
 .title-salary{
     color: #117bf5;
     font-weight: bold;

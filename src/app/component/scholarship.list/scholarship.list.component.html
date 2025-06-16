@@ -1,107 +1,104 @@
 <div class="Main">
     <div class="Content">
-        <div class="w-1/4 p-4 ">
+        <div class="w-1/4 p-4">
             <div>
                 <div class="w-full max-w-xs">
                     <div class="border-b-2 border-orange-500 mb-4"></div>
                     <div class="flex items-center mb-4">
                         <i class="fa-solid fa-paper-plane mr-2"></i>
-                        <span class="text-xl font-semibold">Scholarships</span>
+                        <span class="text-xl font-semibold">Học bổng</span>
                     </div>
                     <div class="border-b mb-4"></div>
                 </div>
             </div>
+
+            <!-- Bộ lọc theo vị trí -->
             <div class="mb-4">
                 <h2 class="text-lg font-bold flex items-center cursor-pointer" onclick="toggleMenu('location-menu')">
-                    <i class="fas fa-map-marker-alt mr-2">
-                    </i>
-                    Location
-                    <i class="fas fa-chevron-down ml-auto">
-                    </i>
+                    <i class="fas fa-map-marker-alt mr-2"></i>
+                    Quốc gia
+                    <i class="fas fa-chevron-down ml-auto"></i>
                 </h2>
                 <div class="mt-2" id="location-menu" style="display: block;">
                     <div class="flex items-center">
-                        <span class="font-bold">
-                            Country
-                        </span>
+                        <span class="font-bold">Chọn quốc gia</span>
                     </div>
                     <div class="mt-2">
                         <label class="block">
-                            <input class="mr-2" type="radio" name="country" value="GB"
-                                (change)="onCountryChange('GB')" />
-                            United Kingdom
+                            <input class="mr-2" type="radio" name="country" value="VN" (change)="onCountryChange('VN')" />
+                            Việt Nam
                         </label>
                         <label class="block mt-2">
-                            <input class="mr-2" type="radio" name="country" value="US"
-                                (change)="onCountryChange('US')" />
-                            United States
+                            <input class="mr-2" type="radio" name="country" value="GB" (change)="onCountryChange('GB')" />
+                            Vương quốc Anh
                         </label>
                         <label class="block mt-2">
-                            <input class="mr-2" type="radio" name="country" value="CA"
-                                (change)="onCountryChange('CA')" />
+                            <input class="mr-2" type="radio" name="country" value="US" (change)="onCountryChange('US')" />
+                            Hoa Kỳ
+                        </label>
+                        <label class="block mt-2">
+                            <input class="mr-2" type="radio" name="country" value="CA" (change)="onCountryChange('CA')" />
                             Canada
                         </label>
                         <label class="block mt-2">
-                            <input class="mr-2" type="radio" name="country" value="DE"
-                                (change)="onCountryChange('DE')" />
-                            Germany
+                            <input class="mr-2" type="radio" name="country" value="DE" (change)="onCountryChange('DE')" />
+                            Đức
                         </label>
                         <label class="block mt-2">
-                            <input class="mr-2" type="radio" name="country" value="AU"
-                                (change)="onCountryChange('AU')" />
-                            Australia
+                            <input class="mr-2" type="radio" name="country" value="AU" (change)="onCountryChange('AU')" />
+                            Úc
                         </label>
                     </div>
                 </div>
             </div>
+
+            <!-- Bộ lọc theo ngành -->
             <div class="mb-4">
                 <h2 class="text-lg font-bold flex items-center cursor-pointer" onclick="toggleMenu('disciplineMenu')">
-                    <i class="fas fa-th-large mr-2">
-                    </i>
-                    Discipline
-                    <i class="fas fa-chevron-down ml-auto">
-                    </i>
+                    <i class="fas fa-th-large mr-2"></i>
+                    Ngành học
+                    <i class="fas fa-chevron-down ml-auto"></i>
                 </h2>
                 <ul class="mt-2" id="disciplineMenu" style="display: block;">
                     <li class="flex hover:cursor-pointer items-center mb-2" id="606" (click)="searchByDiscipline('606')"
                         [ngClass]="{'bg-light-gray text-dark': selectedDisciplineId === '606'}">
                         <i class="fas fa-paint-brush mr-2"></i>
-                        Arts &amp; Design
+                        Nghệ thuật & Thiết kế
                     </li>
                     <li class="flex hover:cursor-pointer items-center mb-2" id="808" (click)="searchByDiscipline('808')"
                         [ngClass]="{'bg-light-gray text-dark': selectedDisciplineId === '808'}">
                         <i class="fa-solid fa-pen-ruler mr-2"></i>
-                        Architecture
+                        Kiến trúc
                     </li>
                     <li class="flex hover:cursor-pointer mb-2" id="111" (click)="searchByDiscipline('111')"
                         [ngClass]="{'bg-light-gray text-dark': selectedDisciplineId === '111'}">
                         <i class="fa-solid fa-book mr-2"></i>
-                        Languages
+                        Ngôn ngữ
                     </li>
                     <li class="flex hover:cursor-pointer items-center mb-2" id="202" (click)="searchByDiscipline('202')"
                         [ngClass]="{'bg-light-gray text-dark': selectedDisciplineId === '202'}">
                         <i class="fas fa-briefcase mr-2"></i>
-                        Business Administration
+                        Quản trị kinh doanh
                     </li>
                     <li class="flex hover:cursor-pointer items-center mb-2" id="789" (click)="searchByDiscipline('789')"
                         [ngClass]="{'bg-light-gray text-dark': selectedDisciplineId === '789'}">
                         <i class="fas fa-laptop-code mr-2"></i>
-                        Computer Science
+                        Khoa học máy tính
                     </li>
                     <li class="flex hover:cursor-pointer items-center mb-2" id="123" (click)="searchByDiscipline('123')"
                         [ngClass]="{'bg-light-gray text-dark': selectedDisciplineId === '123'}">
                         <i class="fas fa-laptop-code mr-2"></i>
-                        Information Technology
+                        Công nghệ thông tin
                     </li>
                     <li class="flex hover:cursor-pointer items-center mb-2" id="505" (click)="searchByDiscipline('505')"
                         [ngClass]="{'bg-light-gray text-dark': selectedDisciplineId === '505'}">
                         <i class="fas fa-chalkboard-teacher mr-2"></i>
-                        Education &amp; Training
+                        Giáo dục & Đào tạo
                     </li>
                     <li class="flex hover:cursor-pointer items-center mb-2" id="909" (click)="searchByDiscipline('909')"
                         [ngClass]="{'bg-light-gray text-dark': selectedDisciplineId === '909'}">
                         <i class="fas fa-leaf mr-2"></i>
-                        Data Science
+                        Khoa học dữ liệu
                     </li>
                     <li class="flex hover:cursor-pointer items-center mb-2" id="456" (click)="searchByDiscipline('456')"
                         [ngClass]="{'bg-light-gray text-dark': selectedDisciplineId === '456'}">
@@ -111,89 +108,97 @@
                     <li class="flex hover:cursor-pointer items-center mb-2" id="404" (click)="searchByDiscipline('404')"
                         [ngClass]="{'bg-light-gray text-dark': selectedDisciplineId === '404'}">
                         <i class="fas fa-balance-scale mr-2"></i>
-                        Law
+                        Luật
                     </li>
                     <li class="flex hover:cursor-pointer items-center mb-2" id="101" (click)="searchByDiscipline('101')"
                         [ngClass]="{'bg-light-gray text-dark': selectedDisciplineId === '101'}">
                         <i class="fas fa-heartbeat mr-2"></i>
-                        Medicine &amp; Health
+                        Y học & Sức khỏe
                     </li>
                     <li class="flex hover:cursor-pointer items-center mb-2" id="303" (click)="searchByDiscipline('303')"
                         [ngClass]="{'bg-light-gray text-dark': selectedDisciplineId === '303'}">
                         <i class="fas fa-users mr-2"></i>
-                        Social Sciences
+                        Khoa học xã hội
                     </li>
                 </ul>
             </div>
         </div>
+
+        <!-- Phần nội dung học bổng bên phải -->
         <div class="Content-right">
             <div class="ScholarshipSearchHeader">
                 <div class="SearchHeader">
-                    <h1 class="text-3xl font-bold">Global Free Scholarship Information</h1>
+                    <h1 class="text-3xl font-bold">Thông tin học bổng toàn cầu miễn phí</h1>
                 </div>
                 <div class="NavigationButtons">
                     <a class="text-gray-600 hover:text-blue-600 ml-4" href="/truong-hoc">
-                        Universities
+                        Trường học
                     </a>
                     <a class="text-blue-600 hover:text-red-600 ml-4" href="/hoc-bong">
-                        Scholarships
+                        Học bổng
                     </a>
                 </div>
             </div>
+
+            <!-- Danh sách học bổng -->
             <ul class="SearchResults">
                 <li class="SearchResultsItem" *ngFor="let scholarship of scholarships">
                     <div class="ScholarshipCard">
                         <div class="ScholarshipCardContent">
                             <div class="ScholarshipCardQuickFacts">
                                 <div class="ContainQF">
-                                    <div class="QFLabel">Grant</div>
+                                    <div class="QFLabel">Trợ cấp</div>
                                     <div class="QFValue">{{scholarship.grantAmount}}</div>
                                 </div>
                                 <div>
-                                    <div class="QFLabel">DeadLine</div>
+                                    <div class="QFLabel">Hạn cuối</div>
                                     <div class="QFValue UnavailableInfo">{{scholarship.endDate}}</div>
                                 </div>
                             </div>
-                            <h2 class="ScholarshipName" (click)="navDetail(scholarship.id)">{{scholarship.name}}</h2>
-
+                            <h2 class="ScholarshipName" (click)="navDetail(scholarship.id)">
+                                {{scholarship.name}}
+                            </h2>
                             <p class="LinkHighlight">
-                                Read more about eligibility
+                                Xem thêm điều kiện
                                 <i class="Lnr-arrow-right"></i>
                             </p>
                             <div class="ScholarshipCardFooter">
                                 <div class="ScholarshipCardFooter-1">
                                     <div>
-                                        <div class="ProviderLogo"><img [src]="scholarship.schoolLogo" /></div>
+                                        <div class="ProviderLogo">
+                                            <img [src]="scholarship.schoolLogo" />
+                                        </div>
                                     </div>
                                     <div class="ProviderDetails">
                                         <div class="Name" (click)="schoolDetail(scholarship.schoolId)">
-                                            {{scholarship.schoolName}}</div>
+                                            {{scholarship.schoolName}}
+                                        </div>
                                         <div class="Location">{{scholarship.countryName}}</div>
                                     </div>
                                 </div>
                                 <div class="ScholarshipCardFooter-2">
                                     <i [ngClass]="isSaved(scholarship.id) ? 'fa-solid fa-heart' : 'fa-regular fa-heart'"
-                                        (click)="save(scholarship.id)">
+                                       (click)="save(scholarship.id)">
                                     </i>
                                 </div>
-
                             </div>
                         </div>
                     </div>
                 </li>
-                <div *ngIf="scholarships.length == 0">No data</div>
+                <div *ngIf="scholarships.length == 0">Không có dữ liệu</div>
             </ul>
 
-            <div *ngIf="scholarships.length != 0 " class="NavigationContainer">
+            <!-- Phân trang -->
+            <div *ngIf="scholarships.length != 0" class="NavigationContainer">
                 <button class="PreviousButton" (click)="previousPage()">
                     <i class="fa-solid fa-arrow-left"></i>
-                    <span> Previous</span>
+                    <span> Trước</span>
                 </button>
-                <p class="PageCountLabel">{{currentPage}} of {{totalsPages}}</p>
-                <Button class="NextButton" (click)="nextPage()">
-                    <span>Next</span>
+                <p class="PageCountLabel">{{currentPage}} / {{totalsPages}}</p>
+                <button class="NextButton" (click)="nextPage()">
+                    <span>Tiếp</span>
                     <i class="fa-solid fa-arrow-right"></i>
-                </Button>
+                </button>
             </div>
         </div>
     </div>

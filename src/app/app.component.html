@@ -1,5 +1,5 @@
 <div class="d-flex flex-column min-vh-100">
-  <header id="NavBar" *ngIf="!hideHeader">
+  <header id="NavBar" style="background-color: white;" class="sticky top-0 z-50" *ngIf="!hideHeader">
   <div class="SearchRowColBlock">
     <div class="Brand" (click)="homeNav()">
       <img src="//monet-prtl-co.imgix.net/Masters/LogoMastersPortalTransparent.svg" alt="MastersPortal" id="PortalLogo"
@@ -10,13 +10,13 @@
         <li class="SectionNavigationItem">
           <a (click)="universityNav()">
             <i class="fa-solid fa-school mr-2 custom-icon"></i>
-            <span class="SectionNavigationLabel">University</span>
+            <span class="SectionNavigationLabel">Đại học</span>
           </a>
         </li>
         <li class="SectionNavigationItem">
           <a (click)="scholarshipsNav()">
             <i class="fa-solid fa-paper-plane mr-2 custom-icon"></i>
-            <span class="SectionNavigationLabel">Scholarship</span>
+            <span class="SectionNavigationLabel">Học bổng</span>
           </a>
         </li>
       </ul>
@@ -43,9 +43,7 @@
         <button class="search-button" style="border-radius:0px 5px 5px 0px;">
           <i class="fa fa-search"></i>
         </button>
-      
       </div>
-
     </div>
     <div class="Module user-module">
       <ul class="MainMenuSections">

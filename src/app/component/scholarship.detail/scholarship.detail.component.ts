@@ -47,4 +47,7 @@ export class ScholarshipDetailComponent implements OnInit {
       });
     }
   }
+  schoolDetail(id: number) {
+    window.location.href = `/truong-hoc/chi-tiet?id=${id}`;
+  }
 }
